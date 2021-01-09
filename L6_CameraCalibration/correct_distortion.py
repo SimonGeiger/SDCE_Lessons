@@ -53,7 +53,7 @@ def cal_undistort(img, objpoints, imgpoints):
     # Use cv2.calibrateCamera() and cv2.undistort()
 
     ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, img.shape[1::-1], None, None)
-    undist = dst = cv2.undistort(img, mtx, dist, None, mtx)
+    undist = cv2.undistort(img, mtx, dist, None, mtx)
 
     return undist
     
